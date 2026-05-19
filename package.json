@@ -1,0 +1,25 @@
+{
+  "name": "shafra0",
+  "version": "1.0.0",
+  "description": "موقع شركة شفرا للبرمجيات مع لوحة تحكم",
+  "main": "backend-server.js",
+  "scripts": {
+    "start": "node backend-server.js",
+    "dev": "nodemon backend-server.js"
+  },
+  "keywords": [
+    "website",
+    "admin",
+    "panel"
+  ],
+  "author": "apdolona",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
