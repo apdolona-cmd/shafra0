@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="site-title">TechPro - شركة برمجيات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img id="logo-img" src="" alt="Logo" style="display:none;">
+                <span id="logo-text">TechPro</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#products">منتجاتنا</a></li>
+                <li><a href="#portfolio">أعمالنا</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="admin-btn" onclick="window.location.href='admin.html'">
+                    <i class="fas fa-lock"></i> لوحة التحكم
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 id="hero-title">نحول أفكارك إلى واقع رقمي</h1>
+            <p id="hero-desc">نقدم حلول برمجية مبتكرة لتطوير أعمالك وتحقيق أهدافك الرقمية</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">ابدأ مشروعك</a>
+                <a href="#services" class="btn btn-secondary">تعرف على خدماتنا</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img id="hero-img" src="" alt="Hero Image" style="display:none;">
+            <div class="hero-placeholder" id="hero-placeholder">
+                <i class="fas fa-code"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <p class="section-desc">نقدم مجموعة متكاملة من الخدمات البرمجية</p>
+            <div class="services-grid" id="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>تطوير المواقع</h3>
+                    <p>تصميم وتطوير مواقع ويب احترافية ومتجاوبة مع جميع الأجهزة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>تطبيقات الموبايل</h3>
+                    <p>تطوير تطبيقات iOS و Android بأحدث التقنيات</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>المتاجر الإلكترونية</h3>
+                    <p>إنشاء متاجر إلكترونية متكاملة مع بوابات الدفع</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>تصميم UI/UX</h3>
+                    <p>تصميم واجهات مستخدم جذابة وتجربة مستخدم مميزة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-server"></i></div>
+                    <h3>إدارة السيرفرات</h3>
+                    <p>استضافة وإدارة سيرفرات آمنة وعالية الأداء</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>الأمن السيبراني</h3>
+                    <p>حماية بياناتك وأنظمتك من التهديدات الإلكترونية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">منتجاتنا</h2>
+            <p class="section-desc">حلول برمجية جاهزة لتلبية احتياجاتك</p>
+            <div class="products-grid" id="products-grid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">أعمالنا</h2>
+            <p class="section-desc">نماذج من المشاريع التي قمنا بتنفيذها</p>
+            <div class="portfolio-grid" id="portfolio-grid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3 class="stat-number" data-target="250">0</h3>
+                    <p>مشروع منجز</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <h3 class="stat-number" data-target="180">0</h3>
+                    <p>عميل سعيد</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-award"></i>
+                    <h3 class="stat-number" data-target="15">0</h3>
+                    <p>جائزة</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-code"></i>
+                    <h3 class="stat-number" data-target="50000">0</h3>
+                    <p>سطر كود</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">من نحن</h2>
+                    <p id="about-desc">شركة TechPro هي شركة رائدة في مجال تطوير البرمجيات وحلول الويب. تأسست عام 2020 وهدفنا هو تقديم أفضل الحلول التقنية لعملائنا.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>فريق محترف ومتخصص</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>دعم فني على مدار الساعة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>أسعار تنافسية</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>التزام بالمواعيد</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img id="about-img" src="" alt="About" style="display:none;">
+                    <div class="about-placeholder" id="about-placeholder">
+                        <i class="fas fa-building"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">آراء عملائنا</h2>
+            <div class="testimonials-grid" id="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"خدمة ممتازة وفريق محترف. أنصح بالتعامل معهم."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>أحمد محمد</h4>
+                            <span>مدير شركة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"تعامل راقي ونتائج تفوق التوقعات. شكراً لكم."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>سارة علي</h4>
+                            <span>صاحبة متجر</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"أفضل شركة برمجيات تعاملت معها على الإطلاق."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>خالد حسن</h4>
+                            <span>رائد أعمال</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <p class="section-desc">نحن هنا لمساعدتك في تحقيق أهدافك</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>الهاتف</h4>
+                            <p id="contact-phone">+966 50 000 0000</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p id="contact-email">info@techpro.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p id="contact-address">الرياض، المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="الاسم الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="الموضوع">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="رسالتك..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 id="footer-logo">TechPro</h3>
+                    <p>شركة رائدة في مجال تطوير البرمجيات وحلول الويب</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="#products">منتجاتنا</a></li>
+                        <li><a href="#contact">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>خدماتنا</h4>
+                    <ul>
+                        <li><a href="#">تطوير المواقع</a></li>
+                        <li><a href="#">تطبيقات الموبايل</a></li>
+                        <li><a href="#">المتاجر الإلكترونية</a></li>
+                        <li><a href="#">تصميم UI/UX</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>النشرة البريدية</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="بريدك الإلكتروني">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="footer-copy">&copy; 2026 TechPro. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

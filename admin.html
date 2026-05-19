@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - TechPro</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-container" id="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <i class="fas fa-lock"></i>
+                <h2>لوحة التحكم</h2>
+                <p>قم بتسجيل الدخول للمتابعة</p>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> اسم المستخدم</label>
+                    <input type="text" id="username" placeholder="أدخل اسم المستخدم" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-key"></i> كلمة المرور</label>
+                    <input type="password" id="password" placeholder="أدخل كلمة المرور" required>
+                </div>
+                <button type="submit" class="login-btn">تسجيل الدخول</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-container" id="admin-container" style="display:none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-cog"></i> لوحة التحكم</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-tab="dashboard">
+                    <i class="fas fa-home"></i> الرئيسية
+                </a>
+                <a href="#" class="nav-item" data-tab="general">
+                    <i class="fas fa-sliders-h"></i> الإعدادات العامة
+                </a>
+                <a href="#" class="nav-item" data-tab="colors">
+                    <i class="fas fa-palette"></i> الألوان
+                </a>
+                <a href="#" class="nav-item" data-tab="hero">
+                    <i class="fas fa-image"></i> صورة الهيرو
+                </a>
+                <a href="#" class="nav-item" data-tab="logo">
+                    <i class="fas fa-copyright"></i> الشعار
+                </a>
+                <a href="#" class="nav-item" data-tab="services">
+                    <i class="fas fa-concierge-bell"></i> الخدمات
+                </a>
+                <a href="#" class="nav-item" data-tab="products">
+                    <i class="fas fa-box"></i> المنتجات
+                </a>
+                <a href="#" class="nav-item" data-tab="portfolio">
+                    <i class="fas fa-briefcase"></i> الأعمال
+                </a>
+                <a href="#" class="nav-item" data-tab="about">
+                    <i class="fas fa-info-circle"></i> من نحن
+                </a>
+                <a href="#" class="nav-item" data-tab="contact">
+                    <i class="fas fa-phone"></i> معلومات التواصل
+                </a>
+                <a href="#" class="nav-item" data-tab="files">
+                    <i class="fas fa-file-upload"></i> رفع الملفات
+                </a>
+                <a href="#" class="nav-item" data-tab="messages">
+                    <i class="fas fa-envelope"></i> الرسائل
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="view-site-btn"><i class="fas fa-external-link-alt"></i> عرض الموقع</a>
+                <button class="logout-btn" id="logout-btn"><i class="fas fa-sign-out-alt"></i> تسجيل خروج</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="admin-header">
+                <h1 id="page-title">الرئيسية</h1>
+                <div class="admin-user">
+                    <span>مرحباً، Admin</span>
+                    <div class="admin-avatar"><i class="fas fa-user-shield"></i></div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Dashboard Tab -->
+                <div class="tab-content active" id="tab-dashboard">
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background:#4CAF50"><i class="fas fa-eye"></i></div>
+                            <div class="stat-info">
+                                <h3>1,250</h3>
+                                <p>زيارات اليوم</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background:#2196F3"><i class="fas fa-envelope"></i></div>
+                            <div class="stat-info">
+                                <h3 id="msg-count">0</h3>
+                                <p>رسائل جديدة</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background:#FF9800"><i class="fas fa-box"></i></div>
+                            <div class="stat-info">
+                                <h3 id="product-count">0</h3>
+                                <p>المنتجات</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background:#9C27B0"><i class="fas fa-briefcase"></i></div>
+                            <div class="stat-info">
+                                <h3 id="portfolio-count">0</h3>
+                                <p>الأعمال</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <h3>إجراءات سريعة</h3>
+                        <div class="quick-grid">
+                            <button class="quick-btn" onclick="switchTab('products')">
+                                <i class="fas fa-plus"></i> إضافة منتج
+                            </button>
+                            <button class="quick-btn" onclick="switchTab('portfolio')">
+                                <i class="fas fa-plus"></i> إضافة عمل
+                            </button>
+                            <button class="quick-btn" onclick="switchTab('hero')">
+                                <i class="fas fa-upload"></i> رفع صورة
+                            </button>
+                            <button class="quick-btn" onclick="switchTab('colors')">
+                                <i class="fas fa-palette"></i> تغيير الألوان
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- General Settings Tab -->
+                <div class="tab-content" id="tab-general">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-sliders-h"></i> الإعدادات العامة</h3>
+                        <div class="form-group">
+                            <label>اسم الموقع</label>
+                            <input type="text" id="site-name" placeholder="TechPro">
+                        </div>
+                        <div class="form-group">
+                            <label>عنوان الهيرو الرئيسي</label>
+                            <input type="text" id="hero-title-input" placeholder="نحول أفكارك إلى واقع رقمي">
+                        </div>
+                        <div class="form-group">
+                            <label>وصف الهيرو</label>
+                            <textarea id="hero-desc-input" rows="3" placeholder="نقدم حلول برمجية مبتكرة..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>وصف من نحن</label>
+                            <textarea id="about-desc-input" rows="4" placeholder="شركة TechPro هي شركة رائدة..."></textarea>
+                        </div>
+                        <button class="save-btn" onclick="saveGeneralSettings()">
+                            <i class="fas fa-save"></i> حفظ الإعدادات
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Colors Tab -->
+                <div class="tab-content" id="tab-colors">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-palette"></i> تخصيص الألوان</h3>
+                        <div class="color-grid">
+                            <div class="color-item">
+                                <label>اللون الرئيسي</label>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="primary-color" value="#6C63FF">
+                                    <span id="primary-color-value">#6C63FF</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <label>اللون الثانوي</label>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="secondary-color" value="#FF6584">
+                                    <span id="secondary-color-value">#FF6584</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <label>لون الخلفية</label>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="bg-color" value="#0a0a23">
+                                    <span id="bg-color-value">#0a0a23</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <label>لون النص</label>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="text-color" value="#ffffff">
+                                    <span id="text-color-value">#ffffff</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <label>لون البطاقات</label>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="card-color" value="#1a1a3e">
+                                    <span id="card-color-value">#1a1a3e</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <label>لون الفوتر</label>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="footer-color" value="#050510">
+                                    <span id="footer-color-value">#050510</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="color-presets">
+                            <h4>قوالب ألوان جاهزة</h4>
+                            <div class="preset-buttons">
+                                <button class="preset-btn" onclick="applyPreset('purple')" style="background:linear-gradient(135deg,#6C63FF,#FF6584)">بنفسجي</button>
+                                <button class="preset-btn" onclick="applyPreset('blue')" style="background:linear-gradient(135deg,#2196F3,#00BCD4)">أزرق</button>
+                                <button class="preset-btn" onclick="applyPreset('green')" style="background:linear-gradient(135deg,#4CAF50,#8BC34A)">أخضر</button>
+                                <button class="preset-btn" onclick="applyPreset('orange')" style="background:linear-gradient(135deg,#FF9800,#F44336)">برتقالي</button>
+                                <button class="preset-btn" onclick="applyPreset('dark')" style="background:linear-gradient(135deg,#333,#666)">داكن</button>
+                                <button class="preset-btn" onclick="applyPreset('red')" style="background:linear-gradient(135deg,#E91E63,#9C27B0)">أحمر</button>
+                            </div>
+                        </div>
+                        <button class="save-btn" onclick="saveColors()">
+                            <i class="fas fa-save"></i> حفظ الألوان
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Image Tab -->
+                <div class="tab-content" id="tab-hero">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-image"></i> صورة الهيرو</h3>
+                        <div class="upload-area" id="hero-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>اسحب الصورة هنا أو اضغط للرفع</p>
+                            <input type="file" id="hero-image-input" accept="image/*" hidden>
+                        </div>
+                        <div class="preview-container" id="hero-preview">
+                            <p>لا توجد صورة مرفوعة</p>
+                        </div>
+                        <button class="save-btn" onclick="saveHeroImage()">
+                            <i class="fas fa-save"></i> حفظ الصورة
+                        </button>
+                        <button class="delete-btn" onclick="deleteHeroImage()">
+                            <i class="fas fa-trash"></i> حذف الصورة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Logo Tab -->
+                <div class="tab-content" id="tab-logo">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-copyright"></i> شعار الموقع</h3>
+                        <div class="upload-area" id="logo-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>اسحب الشعار هنا أو اضغط للرفع</p>
+                            <input type="file" id="logo-image-input" accept="image/*" hidden>
+                        </div>
+                        <div class="preview-container" id="logo-preview">
+                            <p>لا يوجد شعار مرفوع</p>
+                        </div>
+                        <button class="save-btn" onclick="saveLogo()">
+                            <i class="fas fa-save"></i> حفظ الشعار
+                        </button>
+                        <button class="delete-btn" onclick="deleteLogo()">
+                            <i class="fas fa-trash"></i> حذف الشعار
+                        </button>
+                    </div>
+                </div>
+
+                <!-- About Image Tab -->
+                <div class="tab-content" id="tab-about">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-info-circle"></i> صورة قسم من نحن</h3>
+                        <div class="upload-area" id="about-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>اسحب الصورة هنا أو اضغط للرفع</p>
+                            <input type="file" id="about-image-input" accept="image/*" hidden>
+                        </div>
+                        <div class="preview-container" id="about-preview">
+                            <p>لا توجد صورة مرفوعة</p>
+                        </div>
+                        <button class="save-btn" onclick="saveAboutImage()">
+                            <i class="fas fa-save"></i> حفظ الصورة
+                        </button>
+                        <button class="delete-btn" onclick="deleteAboutImage()">
+                            <i class="fas fa-trash"></i> حذف الصورة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Services Tab -->
+                <div class="tab-content" id="tab-services">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-concierge-bell"></i> إدارة الخدمات</h3>
+                        <div class="add-form">
+                            <h4>إضافة خدمة جديدة</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>اسم الخدمة</label>
+                                    <input type="text" id="service-name" placeholder="مثال: تطوير المواقع">
+                                </div>
+                                <div class="form-group">
+                                    <label>الأيقونة (Font Awesome class)</label>
+                                    <input type="text" id="service-icon" placeholder="fas fa-laptop-code">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>وصف الخدمة</label>
+                                <textarea id="service-desc" rows="2" placeholder="وصف مختصر للخدمة..."></textarea>
+                            </div>
+                            <button class="add-btn" onclick="addService()">
+                                <i class="fas fa-plus"></i> إضافة الخدمة
+                            </button>
+                        </div>
+                        <div class="items-list" id="services-list">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Tab -->
+                <div class="tab-content" id="tab-products">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-box"></i> إدارة المنتجات</h3>
+                        <div class="add-form">
+                            <h4>إضافة منتج جديد</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>اسم المنتج</label>
+                                    <input type="text" id="product-name" placeholder="مثال: نظام إدارة المخزون">
+                                </div>
+                                <div class="form-group">
+                                    <label>السعر</label>
+                                    <input type="text" id="product-price" placeholder="مثال: 500$">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>وصف المنتج</label>
+                                <textarea id="product-desc" rows="2" placeholder="وصف مختصر للمنتج..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>صورة المنتج</label>
+                                <input type="file" id="product-image-input" accept="image/*">
+                            </div>
+                            <button class="add-btn" onclick="addProduct()">
+                                <i class="fas fa-plus"></i> إضافة المنتج
+                            </button>
+                        </div>
+                        <div class="items-list" id="products-list">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Tab -->
+                <div class="tab-content" id="tab-portfolio">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-briefcase"></i> إدارة الأعمال</h3>
+                        <div class="add-form">
+                            <h4>إضافة عمل جديد</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>اسم المشروع</label>
+                                    <input type="text" id="portfolio-name" placeholder="مثال: متجر إلكتروني">
+                                </div>
+                                <div class="form-group">
+                                    <label>التصنيف</label>
+                                    <input type="text" id="portfolio-category" placeholder="مثال: مواقع ويب">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>وصف المشروع</label>
+                                <textarea id="portfolio-desc" rows="2" placeholder="وصف مختصر للمشروع..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>صورة المشروع</label>
+                                <input type="file" id="portfolio-image-input" accept="image/*">
+                            </div>
+                            <button class="add-btn" onclick="addPortfolio()">
+                                <i class="fas fa-plus"></i> إضافة المشروع
+                            </button>
+                        </div>
+                        <div class="items-list" id="portfolio-list">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Tab -->
+                <div class="tab-content" id="tab-contact">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-phone"></i> معلومات التواصل</h3>
+                        <div class="form-group">
+                            <label>رقم الهاتف</label>
+                            <input type="text" id="contact-phone-input" placeholder="+966 50 000 0000">
+                        </div>
+                        <div class="form-group">
+                            <label>البريد الإلكتروني</label>
+                            <input type="email" id="contact-email-input" placeholder="info@techpro.com">
+                        </div>
+                        <div class="form-group">
+                            <label>العنوان</label>
+                            <input type="text" id="contact-address-input" placeholder="الرياض، المملكة العربية السعودية">
+                        </div>
+                        <button class="save-btn" onclick="saveContactInfo()">
+                            <i class="fas fa-save"></i> حفظ المعلومات
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Files Tab -->
+                <div class="tab-content" id="tab-files">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-file-upload"></i> رفع الملفات</h3>
+                        <div class="upload-area" id="files-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>اسحب الملفات هنا أو اضغط للرفع</p>
+                            <input type="file" id="files-input" multiple hidden>
+                        </div>
+                        <div class="files-list" id="files-list">
+                            <p class="empty-msg">لا توجد ملفات مرفوعة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Tab -->
+                <div class="tab-content" id="tab-messages">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-envelope"></i> رسائل التواصل</h3>
+                        <div class="messages-list" id="messages-list">
+                            <p class="empty-msg">لا توجد رسائل</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">تم الحفظ بنجاح</span>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
