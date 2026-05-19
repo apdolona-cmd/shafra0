@@ -27,7 +27,7 @@ function initLogin() {
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
 
-        if (username === 'apdo' && password === '01147497465') {
+        if (username === 'apdoo' && password === '01147497465') {
             sessionStorage.setItem('adminLoggedIn', 'true');
             document.getElementById('login-container').style.display = 'none';
             document.getElementById('admin-container').style.display = 'flex';
