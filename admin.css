@@ -131,9 +131,9 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 280px;
+    width: 200px;
     background: var(--admin-sidebar);
-    padding: 20px 0;
+    padding: 12px 0;
     position: fixed;
     height: 100vh;
     overflow-y: auto;
@@ -142,14 +142,14 @@ body {
 }
 
 .sidebar-header {
-    padding: 20px;
+    padding: 12px;
     text-align: center;
     border-bottom: 1px solid var(--admin-border);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .sidebar-header h2 {
-    font-size: 1.3rem;
+    font-size: 1rem;
     background: linear-gradient(135deg, var(--admin-primary), var(--admin-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -167,13 +167,14 @@ body {
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 15px;
+    gap: 8px;
+    padding: 8px 10px;
     color: var(--admin-muted);
     text-decoration: none;
-    border-radius: 10px;
-    margin-bottom: 5px;
+    border-radius: 8px;
+    margin-bottom: 3px;
     transition: all 0.3s;
+    font-size: 0.9rem;
 }
 
 .nav-item:hover,
@@ -188,7 +189,7 @@ body {
 }
 
 .sidebar-footer {
-    padding: 20px;
+    padding: 12px;
     border-top: 1px solid var(--admin-border);
     margin-top: auto;
     position: absolute;
@@ -200,13 +201,14 @@ body {
 .view-site-btn {
     display: block;
     text-align: center;
-    padding: 12px;
+    padding: 10px;
     background: var(--admin-primary);
     color: white;
     text-decoration: none;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
     transition: background 0.3s;
+    font-size: 0.85rem;
 }
 
 .view-site-btn:hover {
@@ -215,14 +217,15 @@ body {
 
 .logout-btn {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background: var(--admin-danger);
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
     transition: opacity 0.3s;
+    font-size: 0.85rem;
 }
 
 .logout-btn:hover {
@@ -232,8 +235,8 @@ body {
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-right: 280px;
-    padding: 30px;
+    margin-right: 200px;
+    padding: 20px;
     min-height: 100vh;
 }
 
@@ -241,24 +244,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 1px solid var(--admin-border);
 }
 
 .admin-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 }
 
 .admin-user {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+    font-size: 0.9rem;
 }
 
 .admin-avatar {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     background: linear-gradient(135deg, var(--admin-primary), var(--admin-secondary));
     border-radius: 50%;
     display: flex;
@@ -269,53 +273,55 @@ body {
 /* Stats Cards */
 .stats-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .stat-card {
     background: var(--admin-card);
-    padding: 25px;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     border: 1px solid var(--admin-border);
 }
 
 .stat-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .stat-icon i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
 }
 
 .stat-info h3 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 }
 
 .stat-info p {
     color: var(--admin-muted);
+    font-size: 0.85rem;
 }
 
 /* Quick Actions */
 .quick-actions {
     background: var(--admin-card);
-    padding: 25px;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 12px;
     border: 1px solid var(--admin-border);
 }
 
 .quick-actions h3 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
 }
 
 .quick-grid {
@@ -325,14 +331,14 @@ body {
 }
 
 .quick-btn {
-    padding: 15px;
+    padding: 10px 12px;
     background: var(--admin-bg);
     border: 1px solid var(--admin-border);
-    border-radius: 10px;
+    border-radius: 8px;
     color: var(--admin-text);
     cursor: pointer;
     transition: all 0.3s;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .quick-btn:hover {
@@ -348,16 +354,17 @@ body {
 /* Settings Card */
 .settings-card {
     background: var(--admin-card);
-    padding: 30px;
-    border-radius: 15px;
+    padding: 20px;
+    border-radius: 12px;
     border: 1px solid var(--admin-border);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .settings-card h3 {
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--admin-border);
+    font-size: 1.1rem;
 }
 
 .settings-card h3 i {
@@ -366,14 +373,15 @@ body {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: var(--admin-muted);
     font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .form-group input[type="text"],
@@ -383,12 +391,12 @@ body {
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 12px 15px;
+    padding: 10px 12px;
     background: var(--admin-bg);
     border: 1px solid var(--admin-border);
-    border-radius: 10px;
+    border-radius: 8px;
     color: var(--admin-text);
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: border-color 0.3s;
 }
 
@@ -401,26 +409,26 @@ body {
 
 .form-group textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 60px;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 15px;
 }
 
 /* Buttons */
 .save-btn,
 .add-btn,
 .delete-btn {
-    padding: 12px 25px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .save-btn {
@@ -505,15 +513,15 @@ body {
 /* Color Picker */
 .color-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .color-item {
     background: var(--admin-bg);
-    padding: 20px;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 12px;
     text-align: center;
 }
 
@@ -582,9 +590,9 @@ body {
 
 .item-card {
     background: var(--admin-bg);
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -592,24 +600,25 @@ body {
 }
 
 .item-card img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .item-info {
     flex: 1;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 .item-info h4 {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+    font-size: 0.95rem;
 }
 
 .item-info p {
     color: var(--admin-muted);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .item-actions {
@@ -647,13 +656,14 @@ body {
 
 .file-item {
     background: var(--admin-bg);
-    padding: 15px 20px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px solid var(--admin-border);
+    font-size: 0.9rem;
 }
 
 .file-item i {
@@ -686,9 +696,9 @@ body {
 
 .message-card {
     background: var(--admin-bg);
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
     border: 1px solid var(--admin-border);
 }
 
